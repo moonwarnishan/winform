@@ -32,6 +32,7 @@ public class ClassService : IClassService
 
     public async Task UpdateClassAsync(Class updatedClass)
     {
+        updatedClass.ModificationDate = DateTime.Now;
         _context.Classes.Update(updatedClass);
         await _context.SaveChangesAsync();
     }

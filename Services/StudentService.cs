@@ -34,6 +34,7 @@ public class StudentService : IStudentService
 
     public async Task UpdateStudentAsync(Student updatedStudent)
     {
+        updatedClass.ModificationDate = DateTime.Now;
         _context.Students.Update(updatedStudent);
         await _context.SaveChangesAsync();
     }
